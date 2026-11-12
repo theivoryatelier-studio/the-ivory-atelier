@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="The Opening Edit, a sample gallery launch website by The Ivory Atelier.">
+  <meta name="theme-color" content="#eee5d9">
+  <title>The Opening Edit · The Ivory Atelier</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+
+    :root { --ink:#2b2522; --paper:#faf6ee; --plaster:#eee5d9; --wine:#613e36; --muted:#594f48; --rule:#bba899; --serif:"Instrument Serif",Georgia,serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 "DM Sans",sans-serif; }
+    a { color:inherit; }
+    :focus-visible { outline:2px solid #90643f; outline-offset:4px; }
+    p,h1,h2,h3 { margin:0; }
+    h1,h2,h3 { font-family:var(--serif); font-weight:400; line-height:1; }
+    h2 { font-size:clamp(3rem,6vw,5.6rem); }
+    h3 { font-size:clamp(1.85rem,3vw,2.5rem); }
+    .skip { position:absolute; z-index:4; left:1rem; top:0; transform:translateY(-110%); padding:.6rem 1rem; background:var(--paper); }
+    .skip:focus { transform:none; }
+    .bar,.nav,footer { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.55rem 1.3rem; padding:.7rem max(5vw,1rem); }
+    .bar { background:#312826; color:#fff5e9; font-size:.78rem; }
+    .nav { border-bottom:1px solid #dacfc2; }
+    .wordmark { font:1.55rem var(--serif); }
+    .nav a { text-decoration:none; }
+    .nav a:hover { text-decoration:underline; text-underline-offset:.3em; }
+    .nav-links { display:flex; flex-wrap:wrap; gap:.55rem clamp(.85rem,3vw,2rem); font-size:.84rem; }
+    .hero { display:grid; align-items:end; min-height:clamp(490px,54vw,690px); isolation:isolate; position:relative; padding:clamp(1.4rem,5vw,5rem); background:#55443c; }
+    .hero img { position:absolute; z-index:-1; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 57%; }
+    .poster { max-width:min(100%,34rem); padding:clamp(1.6rem,4vw,3.6rem); background:#f5ecdf; border-top:4px solid var(--wine); box-shadow:0 14px 40px #20171345; }
+    .eyebrow { color:var(--wine); font-size:.72rem; letter-spacing:.17em; text-transform:uppercase; font-weight:600; }
+    h1 { font-size:clamp(4rem,8.3vw,8.5rem); letter-spacing:-.035em; margin:.5rem 0 .9rem; }
+    h1 em { color:var(--wine); font-weight:400; }
+    .event-meta { font-size:.94rem; color:var(--muted); }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:46px; background:var(--wine); color:#fff9f0; border:1px solid var(--wine); padding:.65rem 1.15rem; font:600 .87rem "DM Sans",sans-serif; text-decoration:none; cursor:pointer; }
+    .button:hover { background:#4a2d27; }
+    .poster .button { margin-top:1.25rem; }
+    .wrap { width:min(1100px,90%); margin:auto; padding-block:clamp(3.5rem,8vw,7rem); }
+    .programme header { display:grid; grid-template-columns:1fr .85fr; align-items:end; gap:1rem 3rem; margin-bottom:1.7rem; }
+    .programme header p { color:var(--muted); max-width:31rem; }
+    .events { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--rule); margin:0; padding:0; list-style:none; }
+    .events li { padding:1.25rem; border-bottom:1px solid var(--rule); }
+    .events li:nth-child(even) { border-left:1px solid var(--rule); }
+    .events time { font-variant-numeric:tabular-nums; color:var(--wine); font-size:.85rem; font-weight:600; }
+    .events h3 { margin:.45rem 0 .4rem; }
+    .events p { font-size:.93rem; color:var(--muted); }
+    .visit { background:var(--plaster); }
+    .visit .wrap,.rsvp .wrap { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:1.6rem clamp(2rem,7vw,6rem); }
+    .visitor-details { margin:0; }
+    .visitor-details div { padding:1rem 0; border-top:1px solid var(--rule); }
+    .visitor-details div:last-child { border-bottom:1px solid var(--rule); }
+    .visitor-details dt { font:1.8rem var(--serif); }
+    .visitor-details dd { margin:.35rem 0 0; color:var(--muted); font-size:.94rem; }
+    .rsvp { background:#312826; color:#fff6e9; }
+    .rsvp h2 { margin-bottom:1rem; }
+    .rsvp-copy p+p { margin-top:.8rem; }
+    .rsvp-copy p { color:#efdfd1; }
+    form { padding:clamp(1.2rem,4vw,2.35rem); background:var(--paper); color:var(--ink); border-top:4px solid #a86d55; }
+    fieldset { min-inline-size:0; border:0; padding:0; margin:0; }
+    label,legend { font-size:.88rem; font-weight:600; }
+    input[type=text],select { display:block; width:100%; margin:.3rem 0 1rem; padding:.65rem; border:1px solid #a69181; border-radius:0; background:#fffdf7; color:var(--ink); font:inherit; }
+    input::placeholder { color:#655a51; }
+    .choices { display:flex; flex-wrap:wrap; gap:.55rem 1.25rem; padding:.45rem 0 1rem; }
+    .choices input { accent-color:var(--wine); }
+    .arrival { margin-top:.25rem; }
+    .result { margin-top:1rem; padding:.8rem; background:#f0e5d9; border-left:3px solid var(--wine); }
+    footer { border-top:1px solid var(--rule); padding-block:1.1rem; font-size:.83rem; }
+    @media(max-width:720px) {
+      .hero { min-height:0; padding:0; }
+      .hero img { position:static; display:block; width:100%; height:clamp(230px,56vw,340px); }
+      .poster { width:100%; max-width:none; box-shadow:none; }
+      .programme header,.visit .wrap,.rsvp .wrap { grid-template-columns:1fr; }
+    }
+    @media(max-width:470px) {
+      .events { grid-template-columns:1fr; }
+      .events li { padding-inline:.15rem; }
+      .events li:nth-child(even) { border-left:0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="bar"><span>Sample event website · Fictional gallery opening</span><a href="index.html#portfolio">Back to The Ivory Atelier</a></div>
+  <header class="nav">
+    <a href="#main" class="wordmark">The Opening Edit</a>
+    <nav class="nav-links" aria-label="Event navigation"><a href="#programme">Programme</a><a href="#visit">Plan your visit</a><a href="#rsvp">RSVP</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="event-title">
+      <img src="opening-edit-gallery.jpg" alt="An imagined contemporary gallery at dusk with abstract art and a stone sculpture" width="1536" height="1024" fetchpriority="high">
+      <div class="poster">
+        <p class="eyebrow">Opening night at Studio Mere</p>
+        <h1 id="event-title">The<br><em>Opening Edit</em></h1>
+        <p class="event-meta"><time datetime="2027-10-15">Friday, 15 October 2027</time> · 6–9 pm<br>Studio Mere, Cape Town</p>
+        <a class="button" href="#rsvp">Try the RSVP</a>
+      </div>
+    </section>
+
+    <section class="programme" id="programme" aria-labelledby="programme-title">
+      <div class="wrap">
+        <header><h2 id="programme-title">Opening night</h2><p>Spend an evening with contemporary painting and sculpture. Come for the first look, stay for a guided walk through the exhibition.</p></header>
+        <ol class="events" aria-label="Event programme, South Africa Standard Time">
+          <li><time datetime="18:00">6:00 pm</time><h3>Doors open</h3><p>Check in, pick up the exhibition guide, and explore at your own pace.</p></li>
+          <li><time datetime="18:45">6:45 pm</time><h3>Welcome remarks</h3><p>A short introduction to the exhibition and the artists behind it.</p></li>
+          <li><time datetime="19:15">7:15 pm</time><h3>Curator’s walkthrough</h3><p>Meet by the entrance for a closer look at selected works.</p></li>
+          <li><time datetime="19:45">7:45 pm</time><h3>Open viewing</h3><p>Return to your favourite pieces before the gallery closes at 9 pm.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap">
+        <h2 id="visit-title">Plan your visit</h2>
+        <dl class="visitor-details">
+          <div><dt>The venue</dt><dd>Studio Mere is a fictional Cape Town gallery created for this sample.</dd></div>
+          <div><dt>Arrival</dt><dd>Choose an arrival window when you reply. Come at 6 pm for the remarks and walkthrough, or at 7:45 pm for open viewing.</dd></div>
+          <div><dt>Access</dt><dd>This sample venue has step-free entry and seating throughout the gallery.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
+      <div class="wrap">
+        <div class="rsvp-copy">
+          <h2 id="rsvp-title">Join us at the gallery</h2>
+          <p>Sample RSVP deadline · 8 October 2027</p>
+          <p>Try replying with a made-up name. Your response stays in this browser.</p>
+        </div>
+        <form id="event-rsvp" autocomplete="off">
+          <fieldset id="reply-fields" disabled>
+            <label for="guest">Guest name</label>
+            <input id="guest" name="guest" type="text" required maxlength="80" pattern=".*\S.*" placeholder="e.g. Sam Taylor">
+            <fieldset>
+              <legend>Will you attend?</legend>
+              <div class="choices">
+                <label><input type="radio" name="attendance" value="yes" required> I’ll be there</label>
+                <label><input type="radio" name="attendance" value="no"> I can’t make it</label>
+              </div>
+            </fieldset>
+            <div id="arrival-fields" class="arrival" hidden>
+              <label for="arrival">Arrival window</label>
+              <select id="arrival" name="arrival" disabled>
+                <option value="">Choose an arrival window</option>
+                <option>6:00 pm · Opening reception</option>
+                <option>7:45 pm · Open viewing</option>
+              </select>
+              <label for="party">Group size</label>
+              <select id="party" name="party" disabled>
+                <option value="1">Just me</option>
+                <option value="2">Me and one guest</option>
+              </select>
+            </div>
+            <button class="button" type="submit">Preview my RSVP</button>
+          </fieldset>
+          <p class="result" id="rsvp-result" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><span>The Opening Edit · A sample by The Ivory Atelier</span><a href="index.html#inquiries">Enquire about an event website</a></footer>
+  <script>
+    const form = document.querySelector('#event-rsvp');
+    const arrivalFields = document.querySelector('#arrival-fields');
+    const arrival = document.querySelector('#arrival');
+    const party = document.querySelector('#party');
+    const result = document.querySelector('#rsvp-result');
+
+    function updateAttendanceFields() {
+      const attending = form.elements.attendance.value === 'yes';
+      arrivalFields.hidden = !attending;
+      arrival.disabled = !attending;
+      arrival.required = attending;
+      party.disabled = !attending;
+      result.hidden = true;
+    }
+
+    form.addEventListener('input', updateAttendanceFields);
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const guest = form.elements.guest.value.trim();
+      const attending = form.elements.attendance.value === 'yes';
+      const partyLabel = party.value === '1' ? '1 guest' : '2 guests';
+      const reply = attending ? `Attending · ${arrival.value} · ${partyLabel}.` : 'Unable to attend.';
+      result.textContent = `Sample reply for ${guest}. ${reply}`;
+      result.hidden = false;
+    });
+    document.querySelector('#reply-fields').disabled = false;
+    updateAttendanceFields();
+  </script>
+</body>
+</html>
