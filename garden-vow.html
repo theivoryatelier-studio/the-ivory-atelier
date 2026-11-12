@@ -4,131 +4,194 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f7f5ec">
-  <meta name="description" content="The Garden Vow, a sample wedding website by The Ivory Atelier.">
+  <meta name="description" content="The Garden Vow, a white garden wedding invitation by The Ivory Atelier.">
+  <meta name="theme-color" content="#faf8f3">
   <title>The Garden Vow · The Ivory Atelier</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
-    :root { --paper:#f7f5ec; --ink:#303a2c; --olive:#40523a; --muted:#535e4d; --line:#c7cdbb; --serif:"Cormorant Garamond",Georgia,serif; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 "DM Sans",sans-serif; }
-    a { color:inherit; }
-    :focus-visible { outline:3px solid #817449; outline-offset:4px; }
-    h1,h2,h3 { margin:0; font-family:var(--serif); font-weight:500; line-height:1; }
-    h2 { font-size:clamp(2.6rem,6vw,4.5rem); margin-bottom:1.3rem; }
-    h3 { font-size:2rem; }
-    p { margin:0 0 1rem; }
-    .skip { position:absolute; transform:translateY(-200%); background:var(--paper); padding:.7rem; z-index:10; }
-    .skip:focus { transform:none; }
-    .demo-bar { display:flex; justify-content:space-between; gap:.5rem 1.4rem; flex-wrap:wrap; background:#32402e; color:#fffdf2; padding:.65rem max(5vw,1rem); font-size:.8rem; }
-    .nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem max(5vw,1rem); }
-    .nav a { text-decoration:none; }
-    .monogram { font:500 1.7rem var(--serif); }
-    .nav-links { display:flex; gap:clamp(.75rem,3vw,2.25rem); flex-wrap:wrap; font-size:.85rem; }
-    .hero { display:grid; grid-template-columns: .85fr 1.15fr; min-height: min(680px,78vh); background:#e8ebdf; }
-    .hero-copy { padding:clamp(3rem,8vw,8rem) max(5vw,1.4rem); align-self:center; }
-    .hero img { width:100%; height:100%; min-height:340px; object-fit:cover; }
-    .eyebrow { font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.19em; margin:0 0 1rem; }
-    h1 { font-size:clamp(4.4rem,8vw,8.8rem); letter-spacing:-.05em; margin-bottom:1.4rem; }
-    h1 em { font-weight:400; color:#5d6f54; }
-    .button { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; border:1px solid var(--olive); border-radius:0; background:var(--olive); color:#fffdf4; padding:.82rem 1.25rem; font:600 .86rem "DM Sans",sans-serif; cursor:pointer; }
-    .button:hover { background:#2e3c2b; }
-    .hero .button { margin-top:.6rem; }
-    .wrap { width:min(1120px,90%); margin:auto; padding:clamp(3.5rem,8vw,7.5rem) 0; }
-    .welcome { text-align:center; max-width:700px; }
-    .welcome p:last-child { color:var(--muted); margin:auto; max-width:560px; }
-    .schedule { background:#e8ebdf; }
-    .schedule .wrap { display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; }
-    .timeline { margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
-    .timeline li { display:grid; grid-template-columns:6.4rem 1fr; gap:.75rem; padding:1.3rem 0; border-bottom:1px solid var(--line); }
-    .timeline time { font-size:.86rem; font-weight:600; }
-    .timeline p { font-size:.94rem; margin:.4rem 0 0; color:var(--muted); }
-    .details-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:2.2rem; }
-    .details-grid article { border-top:1px solid var(--line); padding-top:1.25rem; }
-    .details-grid p { margin:.75rem 0 0; color:var(--muted); }
-    .rsvp { background:#e8ebdf; }
-    .rsvp .wrap { display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; }
-    form { background:var(--paper); border:1px solid var(--line); padding:clamp(1.2rem,3vw,2.5rem); }
-    label,legend { font-weight:600; font-size:.9rem; }
-    input[type=text],select,textarea { width:100%; padding:.7rem; border:1px solid #9ba591; background:#fffef8; color:var(--ink); font:inherit; border-radius:0; margin:.35rem 0 1.05rem; }
-    textarea { resize:vertical; }
-    fieldset { border:0; padding:0; margin:0 0 1.2rem; }
-    .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:.45rem; }
-    input[type=radio] { accent-color:var(--olive); }
-    .result { margin:1rem 0 0; padding:1rem; background:#e8ebdf; }
-    footer { padding:2.2rem 5vw; display:flex; gap:1rem; flex-wrap:wrap; justify-content:space-between; font-size:.84rem; }
-    @media(max-width:700px) {
-      .hero,.schedule .wrap,.rsvp .wrap,.details-grid { grid-template-columns:1fr; }
-      .hero img { min-height:0; aspect-ratio:4/3; }
-      .schedule .wrap,.rsvp .wrap { gap:1.4rem; }
-      .timeline li { grid-template-columns:5.5rem 1fr; }
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap');
+
+    :root {
+      --paper: #fffefa;
+      --ivory: #f7f4ed;
+      --ink: #292e26;
+      --muted: #555b50;
+      --gold: #765f3c;
+      --line: #ccbea4;
+      --sage: #e9ece3;
+      --serif: "Cormorant Garamond", Georgia, serif;
     }
-    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 "DM Sans", sans-serif; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid #816b41; outline-offset: 4px; }
+    p,h1,h2,h3 { margin: 0; }
+    h1,h2,h3 { font-family: var(--serif); font-weight: 500; line-height: 1; }
+    h2 { font-size: clamp(3rem, 6vw, 5.2rem); }
+    h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+    .skip { position: absolute; z-index: 4; left: 1rem; top: 0; padding: .55rem .9rem; transform: translateY(-120%); background: var(--paper); }
+    .skip:focus { transform: none; }
+    .bar,.nav,footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .55rem 1.4rem; padding: .65rem max(5vw, 1rem); }
+    .bar { background: #333c32; color: #fffdf7; font-size: .77rem; }
+    .nav { border-bottom: 1px solid #e4dbca; }
+    .nav a { text-decoration: none; }
+    .nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
+    .wordmark { font: 500 1.55rem var(--serif); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: .45rem clamp(.8rem, 3vw, 2rem); font-size: .84rem; }
+
+    .hero { text-align: center; }
+    .invitation-heading { padding: clamp(2rem, 4vw, 3.5rem) 1rem 1.85rem; }
+    .eyebrow { color: var(--gold); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; }
+    h1 { font-size: clamp(3.45rem, 8.2vw, 8.1rem); letter-spacing: -.062em; margin: .25rem 0 .7rem; }
+    h1 em { color: var(--gold); font-weight: 400; }
+    .occasion { color: var(--muted); font-size: .92rem; }
+    .occasion span { display: block; }
+    .aisle { width: min(1320px, 94%); margin: 0 auto; padding: .4rem; border: 1px solid var(--line); }
+    .aisle img { width: 100%; height: clamp(330px, 42vw, 560px); display: block; object-fit: cover; object-position: center 63%; }
+    .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: .65rem 1.25rem; border: 1px solid #465343; color: #fffdf7; background: #465343; text-decoration: none; font: 600 .87rem "DM Sans", sans-serif; cursor: pointer; }
+    .button:hover { background: #343f32; }
+    .hero .button { margin-top: 1.35rem; }
+
+    .welcome { width: min(690px, 90%); margin: 0 auto; padding: clamp(3rem, 7vw, 6rem) 0; text-align: center; }
+    .welcome p { max-width: 570px; margin: 1rem auto 0; color: var(--muted); }
+    .welcome .signoff { font: italic 500 1.85rem var(--serif); color: var(--gold); }
+    .wrap { width: min(1120px, 90%); margin-inline: auto; padding-block: clamp(3.5rem, 7vw, 6rem); }
+    .schedule { background: var(--ivory); }
+    .schedule .wrap { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; gap: clamp(1.7rem, 5vw, 4.75rem); }
+    .reception { margin: 0; padding: .45rem; border: 1px solid var(--line); background: var(--paper); }
+    .reception img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center; }
+    .schedule .eyebrow { margin-bottom: .55rem; }
+    .timeline { margin: 1.4rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .timeline li { display: grid; grid-template-columns: 5.6rem minmax(0, 1fr); gap: .75rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .timeline time { color: var(--gold); font-size: .88rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .timeline p { font-size: .94rem; color: var(--muted); margin-top: .35rem; }
+
+    .details .wrap { display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 1.75rem clamp(2rem, 7vw, 6rem); }
+    .details dl { margin: 0; }
+    .details dl div { display: grid; grid-template-columns: 8.4rem 1fr; gap: .45rem 1rem; padding: 1.05rem 0; border-top: 1px solid var(--line); }
+    .details dl div:last-child { border-bottom: 1px solid var(--line); }
+    .details dt { font: 500 1.75rem var(--serif); }
+    .details dd { margin: 0; color: var(--muted); }
+
+    .rsvp { background: var(--sage); }
+    .rsvp .wrap { width: min(700px, 92%); }
+    .reply-card { padding: clamp(1.8rem, 6vw, 4rem); background: var(--paper); border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: -.6rem; box-shadow: 0 12px 38px #3c463319; }
+    .reply-card header { text-align: center; margin-bottom: 1.65rem; }
+    .reply-card h2 { margin: .45rem 0 .65rem; }
+    .reply-card header p:last-child { color: var(--muted); font-size: .92rem; }
+    label,legend { font-size: .9rem; font-weight: 600; }
+    input[type=text],select,textarea { display: block; width: 100%; color: var(--ink); background: #fff; font: inherit; padding: .65rem; border: 1px solid #a8997e; border-radius: 0; margin: .3rem 0 1.05rem; }
+    input::placeholder { color: #716b5d; }
+    textarea { resize: vertical; }
+    fieldset { min-inline-size: 0; border: 0; margin: 0; padding: 0; }
+    .attendance { margin-bottom: 1rem; }
+    .choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: .6rem; margin-top: .5rem; }
+    .choice { display: flex; align-items: center; min-height: 50px; gap: .6rem; padding: .55rem .7rem; border: 1px solid #a8997e; cursor: pointer; }
+    .choice input { accent-color: #465343; margin: 0; flex-shrink: 0; }
+    .choice:has(input:checked) { background: var(--sage); border-color: #657060; }
+    .choice:has(input:focus-visible) { outline: 2px solid #816b41; outline-offset: 2px; }
+    .result { margin-top: 1rem; padding: .8rem 1rem; border-left: 3px solid #657060; background: var(--sage); }
+    footer { border-top: 1px solid var(--line); font-size: .83rem; padding-block: 1.25rem; }
+
+    @media (max-width: 740px) {
+      .schedule .wrap,.details .wrap { grid-template-columns: 1fr; }
+      .schedule .reception { grid-row: 2; }
+      .reception img { aspect-ratio: 3/2; }
+    }
+    @media (max-width: 460px) {
+      .aisle { width: 96%; padding: .25rem; }
+      .aisle img { height: 390px; object-position: center 58%; }
+      .details dl div { grid-template-columns: 1fr; }
+      .timeline li { grid-template-columns: 4.55rem minmax(0, 1fr); gap: .6rem; }
+    }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="demo-bar"><span>Sample wedding website · Fictional event</span><a href="index.html#portfolio">Back to The Ivory Atelier</a></div>
+  <div class="bar"><span>Sample wedding website · Fictional event</span><a href="index.html#portfolio">Back to The Ivory Atelier</a></div>
   <header class="nav">
-    <a class="monogram" href="#main" aria-label="Amelia and James, home">A &amp; J</a>
-    <nav class="nav-links" aria-label="Wedding navigation"><a href="#schedule">Schedule</a><a href="#details">Guest details</a><a href="#rsvp">RSVP</a></nav>
+    <a class="wordmark" href="#main">The Garden Vow</a>
+    <nav class="nav-links" aria-label="Wedding navigation"><a href="#schedule">The wedding day</a><a href="#details">Guest details</a><a href="#rsvp">RSVP</a></nav>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="couple">
-      <div class="hero-copy">
-        <p class="eyebrow">The Garden Vow</p>
-        <h1 id="couple">Amelia<br><em>&amp;</em> James</h1>
-        <p>Sunday, 20 June 2027<br>Willowmere Estate, Cape Winelands</p>
+      <div class="invitation-heading">
+        <p class="eyebrow">Together with our families, we invite you to our wedding</p>
+        <h1 id="couple">Amelia <em>&amp;</em> James</h1>
+        <p class="occasion"><time datetime="2027-06-20">Sunday, 20 June 2027</time><span>Willowmere Estate, Cape Winelands</span></p>
         <a class="button" href="#rsvp">Try the RSVP</a>
       </div>
-      <img src="garden-vow-estate.png" alt="Illustrative garden with a white estate and stone steps" width="1536" height="1024" fetchpriority="high">
+      <figure class="aisle">
+        <img src="garden-vow-white-aisle.jpg" alt="A white rose petal aisle lined with abundant white flowers and leading to a floral wedding altar" width="1536" height="1024" fetchpriority="high">
+      </figure>
     </section>
-    <section class="wrap welcome" aria-labelledby="welcome-title">
+
+    <section class="welcome" aria-labelledby="welcome-title">
       <h2 id="welcome-title">Meet us in the garden</h2>
-      <p>We’re gathering our favourite people for a ceremony beneath the trees, dinner by candlelight and a long evening on the dance floor. We’d love to celebrate with you.</p>
+      <p>We’ll exchange our vows beneath an arch of white roses, then celebrate with dinner, a first dance, and all our favourite people.</p>
+      <p class="signoff">With love, Amelia &amp; James</p>
     </section>
+
     <section id="schedule" class="schedule" aria-labelledby="schedule-title">
       <div class="wrap">
-        <div><h2 id="schedule-title">The wedding day</h2><p>20 June 2027 · All times in SAST</p></div>
-        <ol class="timeline">
-          <li><time datetime="15:00">3:00 pm</time><div><h3>Guest arrival</h3><p>Welcome drinks on the terrace.</p></div></li>
-          <li><time datetime="15:30">3:30 pm</time><div><h3>Garden ceremony</h3><p>Take your seat beneath the olive trees.</p></div></li>
-          <li><time datetime="16:15">4:15 pm</time><div><h3>Drinks &amp; photographs</h3><p>Canapés and a toast in the courtyard.</p></div></li>
-          <li><time datetime="18:00">6:00 pm</time><div><h3>Dinner &amp; dancing</h3><p>Join us in the conservatory for dinner, speeches and dancing.</p></div></li>
-        </ol>
+        <figure class="reception">
+          <img src="garden-vow-white-reception.jpg" alt="A white wedding reception table with ivory linens, white roses, crystal and candles" width="1536" height="1024" loading="lazy">
+        </figure>
+        <div>
+          <p class="eyebrow">Sunday, 20 June · SAST</p>
+          <h2 id="schedule-title">The wedding day</h2>
+          <ol class="timeline">
+            <li><time datetime="15:00">3:00 pm</time><div><h3>On the terrace</h3><p>Join us for a welcome drink before taking your seat in the garden.</p></div></li>
+            <li><time datetime="15:30">3:30 pm</time><div><h3>The vows</h3><p>Our ceremony beneath the flowers, followed by a white rose petal toss.</p></div></li>
+            <li><time datetime="16:15">4:15 pm</time><div><h3>Canapés &amp; photographs</h3><p>Raise a glass in the courtyard while we take our wedding portraits.</p></div></li>
+            <li><time datetime="18:00">6:00 pm</time><div><h3>Dinner &amp; the first dance</h3><p>Candlelit dinner, speeches and dancing in the conservatory.</p></div></li>
+          </ol>
+        </div>
       </div>
     </section>
-    <section id="details" class="wrap" aria-labelledby="details-title">
-      <h2 id="details-title">Guest details</h2>
-      <div class="details-grid">
-        <article><h3>The venue</h3><p>Willowmere Estate is an imagined venue in the Cape Winelands. The ceremony takes place on the lawn, with dinner indoors.</p></article>
-        <article><h3>What to wear</h3><p>Garden formal. Bring a layer for the evening and choose shoes comfortable on grass and gravel.</p></article>
-        <article><h3>If it rains</h3><p>We’ll move the ceremony into the conservatory. The arrival time and dinner plans stay the same.</p></article>
+
+    <section id="details" class="details" aria-labelledby="details-title">
+      <div class="wrap">
+        <h2 id="details-title">For our guests</h2>
+        <dl>
+          <div><dt>The venue</dt><dd>Willowmere Estate is a fictional Cape Winelands venue. The ceremony takes place on the lawn, with dinner indoors.</dd></div>
+          <div><dt>What to wear</dt><dd>Garden formal. Bring a layer for the evening and choose shoes comfortable on grass and gravel.</dd></div>
+          <div><dt>If it rains</dt><dd>We’ll move the ceremony into the conservatory. Arrival and dinner times stay the same.</dd></div>
+        </dl>
       </div>
     </section>
+
     <section id="rsvp" class="rsvp" aria-labelledby="rsvp-title">
       <div class="wrap">
-        <div><h2 id="rsvp-title">Kindly reply</h2><p>Sample reply date · 23 May 2027</p><p>Try the guest experience with a made-up name. This demo displays your response in the browser.</p></div>
-        <form id="demo-rsvp" autocomplete="off">
-          <label for="guest">Guest name</label>
-          <input id="guest" name="guest" type="text" required maxlength="80" pattern=".*\S.*" placeholder="e.g. Sam Taylor">
-          <fieldset>
-            <legend>Will you attend?</legend>
-            <div class="choices">
-              <label><input type="radio" name="attendance" value="yes" required> Joyfully accepts</label>
-              <label><input type="radio" name="attendance" value="no"> Regretfully declines</label>
-            </div>
-          </fieldset>
-          <div id="guest-details" hidden>
-            <label for="meal">Meal preference</label>
-            <select id="meal" name="meal" disabled><option value="">Select a meal</option><option>Chicken</option><option>Vegetarian</option><option>Vegan</option></select>
-            <label for="diet">Dietary notes (optional)</label>
-            <textarea id="diet" name="diet" rows="2" maxlength="250" disabled></textarea>
-          </div>
-          <button class="button" type="submit" disabled>Preview my RSVP</button>
-          <p class="result" id="rsvp-result" role="status" hidden></p>
-        </form>
+        <div class="reply-card">
+          <header>
+            <p class="eyebrow">Kindly reply by 23 May 2027</p>
+            <h2 id="rsvp-title">Your wedding reply</h2>
+            <p>Try the sample RSVP with a made-up name. Your reply stays in this browser.</p>
+          </header>
+          <form id="demo-rsvp" autocomplete="off">
+            <fieldset id="reply-fields" disabled>
+              <label for="guest">Guest name</label>
+              <input id="guest" name="guest" type="text" required maxlength="80" pattern=".*\S.*" placeholder="e.g. Sam Taylor">
+              <fieldset class="attendance">
+                <legend>Will you attend?</legend>
+                <div class="choices">
+                  <label class="choice"><input type="radio" name="attendance" value="yes" required> Joyfully accepts</label>
+                  <label class="choice"><input type="radio" name="attendance" value="no"> Regretfully declines</label>
+                </div>
+              </fieldset>
+              <div id="guest-details" hidden>
+                <label for="meal">Meal preference</label>
+                <select id="meal" name="meal" disabled>
+                  <option value="">Select a meal</option><option>Chicken</option><option>Vegetarian</option><option>Vegan</option>
+                </select>
+                <label for="diet">Dietary notes (optional)</label>
+                <textarea id="diet" name="diet" rows="2" maxlength="250" disabled></textarea>
+              </div>
+              <button class="button" type="submit">Preview my RSVP</button>
+            </fieldset>
+            <p class="result" id="rsvp-result" role="status" hidden></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -139,26 +202,29 @@
     const meal = document.querySelector('#meal');
     const diet = document.querySelector('#diet');
     const result = document.querySelector('#rsvp-result');
-    form.querySelector('button').disabled = false;
 
-    form.addEventListener('input', () => {
+    function updateAttendanceFields() {
       const attending = form.elements.attendance.value === 'yes';
       guestDetails.hidden = !attending;
       meal.disabled = !attending;
       meal.required = attending;
       diet.disabled = !attending;
       result.hidden = true;
-    });
+    }
 
+    form.addEventListener('input', updateAttendanceFields);
     form.addEventListener('submit', event => {
       event.preventDefault();
       const guest = form.elements.guest.value.trim();
       const attending = form.elements.attendance.value === 'yes';
-      result.textContent = attending
-        ? `Thank you, ${guest}. Your demo reply is attending, with ${meal.value.toLowerCase()} as your meal choice. No RSVP was sent.`
-        : `Thank you, ${guest}. Your demo reply is unable to attend. No RSVP was sent.`;
+      const dietaryNote = diet.value.trim();
+      const reply = attending ? `Attending · Meal preference: ${meal.value}.` : 'Unable to attend.';
+      const notes = attending && dietaryNote ? ` Dietary notes: ${dietaryNote}.` : '';
+      result.textContent = `Sample reply for ${guest}. ${reply}${notes}`;
       result.hidden = false;
     });
+    document.querySelector('#reply-fields').disabled = false;
+    updateAttendanceFields();
   </script>
 </body>
 </html>
