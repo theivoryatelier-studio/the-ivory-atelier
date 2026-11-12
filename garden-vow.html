@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f5ec">
+  <meta name="description" content="The Garden Vow, a sample wedding website by The Ivory Atelier.">
+  <title>The Garden Vow · The Ivory Atelier</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+    :root { --paper:#f7f5ec; --ink:#303a2c; --olive:#40523a; --muted:#535e4d; --line:#c7cdbb; --serif:"Cormorant Garamond",Georgia,serif; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 "DM Sans",sans-serif; }
+    a { color:inherit; }
+    :focus-visible { outline:3px solid #817449; outline-offset:4px; }
+    h1,h2,h3 { margin:0; font-family:var(--serif); font-weight:500; line-height:1; }
+    h2 { font-size:clamp(2.6rem,6vw,4.5rem); margin-bottom:1.3rem; }
+    h3 { font-size:2rem; }
+    p { margin:0 0 1rem; }
+    .skip { position:absolute; transform:translateY(-200%); background:var(--paper); padding:.7rem; z-index:10; }
+    .skip:focus { transform:none; }
+    .demo-bar { display:flex; justify-content:space-between; gap:.5rem 1.4rem; flex-wrap:wrap; background:#32402e; color:#fffdf2; padding:.65rem max(5vw,1rem); font-size:.8rem; }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem max(5vw,1rem); }
+    .nav a { text-decoration:none; }
+    .monogram { font:500 1.7rem var(--serif); }
+    .nav-links { display:flex; gap:clamp(.75rem,3vw,2.25rem); flex-wrap:wrap; font-size:.85rem; }
+    .hero { display:grid; grid-template-columns: .85fr 1.15fr; min-height: min(680px,78vh); background:#e8ebdf; }
+    .hero-copy { padding:clamp(3rem,8vw,8rem) max(5vw,1.4rem); align-self:center; }
+    .hero img { width:100%; height:100%; min-height:340px; object-fit:cover; }
+    .eyebrow { font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.19em; margin:0 0 1rem; }
+    h1 { font-size:clamp(4.4rem,8vw,8.8rem); letter-spacing:-.05em; margin-bottom:1.4rem; }
+    h1 em { font-weight:400; color:#5d6f54; }
+    .button { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; border:1px solid var(--olive); border-radius:0; background:var(--olive); color:#fffdf4; padding:.82rem 1.25rem; font:600 .86rem "DM Sans",sans-serif; cursor:pointer; }
+    .button:hover { background:#2e3c2b; }
+    .hero .button { margin-top:.6rem; }
+    .wrap { width:min(1120px,90%); margin:auto; padding:clamp(3.5rem,8vw,7.5rem) 0; }
+    .welcome { text-align:center; max-width:700px; }
+    .welcome p:last-child { color:var(--muted); margin:auto; max-width:560px; }
+    .schedule { background:#e8ebdf; }
+    .schedule .wrap { display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; }
+    .timeline { margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+    .timeline li { display:grid; grid-template-columns:6.4rem 1fr; gap:.75rem; padding:1.3rem 0; border-bottom:1px solid var(--line); }
+    .timeline time { font-size:.86rem; font-weight:600; }
+    .timeline p { font-size:.94rem; margin:.4rem 0 0; color:var(--muted); }
+    .details-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:2.2rem; }
+    .details-grid article { border-top:1px solid var(--line); padding-top:1.25rem; }
+    .details-grid p { margin:.75rem 0 0; color:var(--muted); }
+    .rsvp { background:#e8ebdf; }
+    .rsvp .wrap { display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; }
+    form { background:var(--paper); border:1px solid var(--line); padding:clamp(1.2rem,3vw,2.5rem); }
+    label,legend { font-weight:600; font-size:.9rem; }
+    input[type=text],select,textarea { width:100%; padding:.7rem; border:1px solid #9ba591; background:#fffef8; color:var(--ink); font:inherit; border-radius:0; margin:.35rem 0 1.05rem; }
+    textarea { resize:vertical; }
+    fieldset { border:0; padding:0; margin:0 0 1.2rem; }
+    .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:.45rem; }
+    input[type=radio] { accent-color:var(--olive); }
+    .result { margin:1rem 0 0; padding:1rem; background:#e8ebdf; }
+    footer { padding:2.2rem 5vw; display:flex; gap:1rem; flex-wrap:wrap; justify-content:space-between; font-size:.84rem; }
+    @media(max-width:700px) {
+      .hero,.schedule .wrap,.rsvp .wrap,.details-grid { grid-template-columns:1fr; }
+      .hero img { min-height:0; aspect-ratio:4/3; }
+      .schedule .wrap,.rsvp .wrap { gap:1.4rem; }
+      .timeline li { grid-template-columns:5.5rem 1fr; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="demo-bar"><span>Sample wedding website · Fictional event</span><a href="index.html#portfolio">Back to The Ivory Atelier</a></div>
+  <header class="nav">
+    <a class="monogram" href="#main" aria-label="Amelia and James, home">A &amp; J</a>
+    <nav class="nav-links" aria-label="Wedding navigation"><a href="#schedule">Schedule</a><a href="#details">Guest details</a><a href="#rsvp">RSVP</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="couple">
+      <div class="hero-copy">
+        <p class="eyebrow">The Garden Vow</p>
+        <h1 id="couple">Amelia<br><em>&amp;</em> James</h1>
+        <p>Sunday, 20 June 2027<br>Willowmere Estate, Cape Winelands</p>
+        <a class="button" href="#rsvp">Try the RSVP</a>
+      </div>
+      <img src="garden-vow-estate.png" alt="Illustrative garden with a white estate and stone steps" width="1536" height="1024" fetchpriority="high">
+    </section>
+    <section class="wrap welcome" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Meet us in the garden</h2>
+      <p>We’re gathering our favourite people for a ceremony beneath the trees, dinner by candlelight and a long evening on the dance floor. We’d love to celebrate with you.</p>
+    </section>
+    <section id="schedule" class="schedule" aria-labelledby="schedule-title">
+      <div class="wrap">
+        <div><h2 id="schedule-title">The wedding day</h2><p>20 June 2027 · All times in SAST</p></div>
+        <ol class="timeline">
+          <li><time datetime="15:00">3:00 pm</time><div><h3>Guest arrival</h3><p>Welcome drinks on the terrace.</p></div></li>
+          <li><time datetime="15:30">3:30 pm</time><div><h3>Garden ceremony</h3><p>Take your seat beneath the olive trees.</p></div></li>
+          <li><time datetime="16:15">4:15 pm</time><div><h3>Drinks &amp; photographs</h3><p>Canapés and a toast in the courtyard.</p></div></li>
+          <li><time datetime="18:00">6:00 pm</time><div><h3>Dinner &amp; dancing</h3><p>Join us in the conservatory for dinner, speeches and dancing.</p></div></li>
+        </ol>
+      </div>
+    </section>
+    <section id="details" class="wrap" aria-labelledby="details-title">
+      <h2 id="details-title">Guest details</h2>
+      <div class="details-grid">
+        <article><h3>The venue</h3><p>Willowmere Estate is an imagined venue in the Cape Winelands. The ceremony takes place on the lawn, with dinner indoors.</p></article>
+        <article><h3>What to wear</h3><p>Garden formal. Bring a layer for the evening and choose shoes comfortable on grass and gravel.</p></article>
+        <article><h3>If it rains</h3><p>We’ll move the ceremony into the conservatory. The arrival time and dinner plans stay the same.</p></article>
+      </div>
+    </section>
+    <section id="rsvp" class="rsvp" aria-labelledby="rsvp-title">
+      <div class="wrap">
+        <div><h2 id="rsvp-title">Kindly reply</h2><p>Sample reply date · 23 May 2027</p><p>Try the guest experience with a made-up name. This demo displays your response in the browser.</p></div>
+        <form id="demo-rsvp" autocomplete="off">
+          <label for="guest">Guest name</label>
+          <input id="guest" name="guest" type="text" required maxlength="80" pattern=".*\S.*" placeholder="e.g. Sam Taylor">
+          <fieldset>
+            <legend>Will you attend?</legend>
+            <div class="choices">
+              <label><input type="radio" name="attendance" value="yes" required> Joyfully accepts</label>
+              <label><input type="radio" name="attendance" value="no"> Regretfully declines</label>
+            </div>
+          </fieldset>
+          <div id="guest-details" hidden>
+            <label for="meal">Meal preference</label>
+            <select id="meal" name="meal" disabled><option value="">Select a meal</option><option>Chicken</option><option>Vegetarian</option><option>Vegan</option></select>
+            <label for="diet">Dietary notes (optional)</label>
+            <textarea id="diet" name="diet" rows="2" maxlength="250" disabled></textarea>
+          </div>
+          <button class="button" type="submit" disabled>Preview my RSVP</button>
+          <p class="result" id="rsvp-result" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><span>The Garden Vow · A sample by The Ivory Atelier</span><a href="index.html#inquiries">Enquire about a wedding website</a></footer>
+  <script>
+    const form = document.querySelector('#demo-rsvp');
+    const guestDetails = document.querySelector('#guest-details');
+    const meal = document.querySelector('#meal');
+    const diet = document.querySelector('#diet');
+    const result = document.querySelector('#rsvp-result');
+    form.querySelector('button').disabled = false;
+
+    form.addEventListener('input', () => {
+      const attending = form.elements.attendance.value === 'yes';
+      guestDetails.hidden = !attending;
+      meal.disabled = !attending;
+      meal.required = attending;
+      diet.disabled = !attending;
+      result.hidden = true;
+    });
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const guest = form.elements.guest.value.trim();
+      const attending = form.elements.attendance.value === 'yes';
+      result.textContent = attending
+        ? `Thank you, ${guest}. Your demo reply is attending, with ${meal.value.toLowerCase()} as your meal choice. No RSVP was sent.`
+        : `Thank you, ${guest}. Your demo reply is unable to attend. No RSVP was sent.`;
+      result.hidden = false;
+    });
+  </script>
+</body>
+</html>
