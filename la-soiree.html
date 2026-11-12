@@ -5,86 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <meta name="description" content="La Soirée, a sample dinner invitation by The Ivory Atelier.">
-  <meta name="theme-color" content="#f7f3eb">
+  <meta name="theme-color" content="#1829ab">
   <title>La Soirée · The Ivory Atelier</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap');
-    :root { --ink:#24251c; --paper:#f7f1e4; --gold:#e3c797; --rule:#887658; --serif:"Cormorant Garamond",Georgia,serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap');
+    :root { --blue:#1829ab; --red:#b52a20; --paper:#fff3d8; --ink:#171a33; --display:"Archivo Black","Arial Black",sans-serif; }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--ink); color:var(--paper); font:16px/1.65 "DM Sans",sans-serif; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 "DM Sans",Arial,sans-serif; }
     a { color:inherit; }
-    :focus-visible { outline:3px solid #b38c4a; outline-offset:4px; }
-    h1,h2,h3 { margin:0; font:500 1em/1 var(--serif); }
-    h2 { font-size:clamp(3rem,6vw,5rem); margin-bottom:1.2rem; }
-    h3 { font-size:1.9rem; }
+    :focus-visible { outline:3px dashed currentColor; outline-offset:4px; }
     p { margin:0 0 1rem; }
-    .skip { position:absolute; left:1rem; top:0; transform:translateY(-110%); padding:.7rem; background:var(--paper); color:var(--ink); z-index:3; }
+    h1,h2,h3 { margin:0; line-height:1.02; }
+    h2 { font:clamp(2.4rem,5vw,5rem)/.98 var(--display); letter-spacing:-.055em; margin-bottom:1.4rem; }
+    h3 { font-size:1.35rem; font-weight:700; }
+    .skip { position:absolute; left:1rem; top:0; transform:translateY(-120%); padding:.7rem; background:var(--paper); color:var(--ink); z-index:3; }
     .skip:focus { transform:none; }
-    .bar,.nav,footer { padding:.8rem max(5vw,1rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.65rem 1.5rem; }
-    .bar { background:#171811; color:#e7dbbf; font-size:.76rem; }
-    .nav { border-bottom:1px solid #66583f; }
+    .bar,.nav,footer { display:flex; align-items:center; justify-content:space-between; gap:.6rem 1.3rem; flex-wrap:wrap; padding:.7rem max(4vw,1rem); }
+    .bar { background:var(--ink); color:var(--paper); font-size:.78rem; }
+    .nav { border-bottom:2px solid var(--ink); color:var(--blue); }
     .nav a { text-decoration:none; }
-    .wordmark { font:italic 1.5rem var(--serif); color:var(--gold); }
-    nav { display:flex; gap:clamp(1rem,3vw,2rem); font-size:.82rem; }
-    .hero { min-height: min(690px, 80vh); position:relative; isolation:isolate; display:grid; place-items:center; text-align:center; padding:5rem 1.25rem; background:#353025; }
-    .hero img,.hero::after { position:absolute; inset:0; width:100%; height:100%; z-index:-1; }
-    .hero img { object-fit:cover; }
-    .hero::after { content:""; background:linear-gradient(90deg,#191711b0,#19171175,#191711b0),linear-gradient(0deg,#191711c4,transparent 85%); }
-    .eyebrow { color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; font-weight:600; }
-    h1 { font-size:clamp(3.6rem,9vw,8rem); letter-spacing:-.045em; margin:.7rem 0 1.25rem; }
-    h1 em { font-weight:400; color:#f0d9ae; }
-    .hero p:not(.eyebrow) { font-size:1rem; }
-    .button { display:inline-flex; justify-content:center; align-items:center; border:1px solid var(--gold); background:var(--gold); color:#211e15; padding:.85rem 1.25rem; text-decoration:none; font:600 .86rem "DM Sans",sans-serif; cursor:pointer; }
-    .button:hover { background:#f4ddba; }
-    .hero .button { margin-top:.6rem; }
-    .wrap { width:min(1120px,90%); margin:auto; padding:clamp(3.5rem,8vw,7rem) 0; }
-    .evening { background:var(--paper); color:var(--ink); }
-    .evening .wrap,.rsvp .wrap { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,8vw,7rem); }
-    .evening .eyebrow { color:#775c30; }
-    .schedule { margin:0; padding:0; list-style:none; border-top:1px solid #b7a78b; }
-    .schedule li { display:grid; grid-template-columns:5rem 1fr; gap:1rem; padding:1.2rem 0; border-bottom:1px solid #b7a78b; }
-    time { font-size:.82rem; font-weight:600; }
+    .nav a:hover { text-decoration:underline; }
+    .wordmark { font-family:var(--display); letter-spacing:-.06em; }
+    nav { display:flex; gap:clamp(.8rem,3vw,2rem); font-weight:700; font-size:.84rem; }
+    .hero { display:grid; grid-template-columns:1.1fr .9fr; background:var(--blue); color:var(--paper); }
+    .hero > div { grid-column:1; grid-row:1; min-width:0; padding:clamp(2.8rem,6vw,7rem) max(4vw,1.2rem); align-self:center; }
+    .hero img { grid-column:2; grid-row:1; width:100%; height:100%; min-height:0; object-fit:cover; object-position:50% 55%; aspect-ratio:4/5; }
+    .eyebrow { font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; }
+    h1 { font:clamp(3.65rem,9vw,10rem)/.86 var(--display); text-transform:uppercase; letter-spacing:-.075em; margin:.7rem 0 1.65rem; }
+    h1 em { font-style:normal; display:block; }
+    .hero p:not(.eyebrow) { font-weight:600; }
+    .button { display:inline-flex; align-items:center; justify-content:center; background:var(--paper); color:var(--blue); border:2px solid currentColor; padding:.7rem 1.15rem; font:700 .9rem "DM Sans",Arial,sans-serif; text-decoration:none; cursor:pointer; }
+    .button:hover { text-decoration:underline; }
+    .wrap { width:min(1180px,92%); margin:auto; padding:clamp(3.4rem,7vw,6rem) 0; }
+    .evening .wrap,.rsvp .wrap { display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,6vw,6rem); }
+    .evening h2,.evening .eyebrow { color:var(--blue); }
+    .schedule { margin:0; padding:0; list-style:none; border-top:2px solid currentColor; }
+    .schedule li { display:grid; grid-template-columns:5.8rem 1fr; gap:.8rem; padding:1.1rem 0; border-bottom:2px solid currentColor; }
+    time { font: .84rem var(--display); color:var(--red); }
     .schedule p { margin:.4rem 0 0; }
-    .details { background:#34352a; }
+    .details { background:var(--red); color:var(--paper); }
     .details-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
-    .details-grid article { padding-top:1rem; border-top:1px solid var(--rule); }
-    .details-grid p { margin:.75rem 0 0; color:#e8decc; }
-    form { padding:clamp(1.2rem,3vw,2.25rem); background:#303127; border:1px solid var(--rule); }
-    label,legend { font-size:.9rem; font-weight:600; }
-    input[type=text],textarea { display:block; width:100%; border:1px solid #a6977b; background:#24251c; color:var(--paper); font:inherit; padding:.7rem; margin:.4rem 0 1.2rem; }
-    input::placeholder { color:#c6b99e; }
+    .details-grid article { padding-top:1rem; border-top:2px solid currentColor; }
+    .details-grid p { margin:.75rem 0 0; }
+    .rsvp { background:var(--blue); color:var(--paper); }
+    form { padding:clamp(1rem,3vw,2.2rem); background:var(--paper); color:var(--ink); border:2px solid var(--ink); }
+    label,legend { font-weight:700; font-size:.9rem; }
+    input[type=text],textarea { display:block; width:100%; padding:.65rem; font:inherit; color:var(--ink); background:#fffbec; border:2px solid var(--ink); margin:.4rem 0 1.1rem; border-radius:0; }
     textarea { resize:vertical; }
-    input[type=radio] { accent-color:var(--gold); }
-    fieldset { border:0; padding:0; margin:0 0 1.25rem; }
+    input[type=radio] { accent-color:var(--blue); }
+    fieldset { border:0; padding:0; margin:0 0 1.2rem; }
     .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:.45rem; }
-    .result { padding:.8rem; margin:1rem 0 0; background:#403a2a; }
-    footer { border-top:1px solid var(--rule); font-size:.82rem; }
-    @media(max-width:690px) {
-      .evening .wrap,.rsvp .wrap,.details-grid { grid-template-columns:1fr; }
-      .hero { min-height:520px; }
-    }
-    :root { --ink:#382d26; --paper:#faf6ee; --gold:#825b46; --rule:#bb9f8d; }
-    body { background:#f7f3eb; color:var(--ink); }
-    .bar { background:#49362c; color:#fff9ed; }
-    .nav { border-bottom:1px solid #d8c7b8; }
-    .hero { background:#e9ded0; grid-template-columns:1fr 1fr; padding:0; min-height:0; }
-    .hero img { position:static; z-index:auto; grid-column:2; grid-row:1; min-height:520px; object-fit:cover; }
-    .hero::after { display:none; }
-    .hero > div { grid-column:1; grid-row:1; padding:4.5rem 1.2rem; }
-    h1 em { color:#825b46; }
-    .hero h1 { font-size:clamp(4rem,9vw,9rem); }
-    .button { background:#684433; color:#fff8ec; border-color:#684433; }
-    .button:hover { background:#543428; }
-    .details,.rsvp { background:#eee4d8; }
-    .details-grid p { color:#534237; }
-    form { background:#fffaf3; }
-    input[type=text],textarea { background:#fffdf8; color:var(--ink); }
-    input::placeholder { color:#766255; }
-    .result { background:#f1e6d9; }
-    @media(max-width:690px) {
-      .hero { grid-template-columns:1fr; }
-      .hero img { grid-column:1; grid-row:2; min-height:0; aspect-ratio:4/3; }
-      .hero > div { padding:3.4rem 1rem; }
+    form .button { background:var(--blue); color:var(--paper); border-color:var(--blue); }
+    .result { margin:1rem 0 0; padding:.75rem; border-left:4px solid var(--blue); background:#e8e8fb; }
+    footer { color:var(--blue); font-size:.86rem; }
+    @media(max-width:740px) {
+      .hero,.evening .wrap,.rsvp .wrap,.details-grid { grid-template-columns:1fr; }
+      .hero img { grid-column:1; grid-row:2; aspect-ratio:5/4; }
+      h1 { font-size:clamp(3.5rem,12vw,6.4rem); }
     }
   </style>
 </head>
@@ -97,7 +74,7 @@
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="invitation-title">
-      <img src="la-soiree-table.png" alt="Illustrative dinner table with cream linens and pale flowers" width="1536" height="1024" fetchpriority="high">
+      <img src="la-soiree-supper-club.png" alt="Illustrative supper-club table with heirloom tomatoes and a cobalt tablecloth" width="1024" height="1280" fetchpriority="high">
       <div>
         <p class="eyebrow">An intimate gathering</p>
         <h1 id="invitation-title">La <em>Soirée</em></h1>
