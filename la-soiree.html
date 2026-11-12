@@ -63,6 +63,28 @@
       .hero img { grid-column:1; grid-row:2; aspect-ratio:5/4; }
       h1 { font-size:clamp(3.5rem,12vw,6.4rem); }
     }
+    .hero { grid-template-columns:minmax(0,1fr); gap:0; padding:0 1.25rem 3.5rem; background:#f7f3eb; }
+    .hero > div { grid-column:1; grid-row:1; width:min(100%,700px); padding:3.4rem 1rem 2.2rem; }
+    .hero h1 { font-size:clamp(4.4rem,12vw,10rem); margin:.35rem 0 1.15rem; }
+    .hero img { grid-column:1; grid-row:2; width:min(100%,530px); height:auto; aspect-ratio:5/4; min-height:0; border-radius:50% 50% 0 0 / 56% 56% 0 0; outline:1px solid #bb9f8d; outline-offset:6px; }
+    .hero .eyebrow { margin:0; }
+    .hero .button { background:transparent; color:#684433; }
+    .hero .button:hover { background:#eee4d8; }
+    .evening { background:#e9ded0; }
+    .evening .wrap,.rsvp .wrap { display:block; text-align:center; }
+    .evening .wrap > div,.rsvp .wrap > div { max-width:550px; margin:0 auto 2rem; }
+    .schedule { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--rule); }
+    .schedule li { display:block; padding:1.6rem 1rem; }
+    .schedule li + li { border-left:1px solid var(--rule); }
+    .schedule h3 { margin:.5rem 0; }
+    .details { background:#f7f3eb; }
+    .details h2 { text-align:center; }
+    .rsvp form { max-width:530px; margin:auto; text-align:left; border:1px solid var(--rule); outline:1px solid #d8c7b8; outline-offset:5px; }
+    @media(max-width:690px) {
+      .hero > div { padding:2.7rem 0 2rem; }
+      .schedule { grid-template-columns:1fr; }
+      .schedule li + li { border-left:0; }
+    }
   </style>
 </head>
 <body>
