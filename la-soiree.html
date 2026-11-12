@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="La Soirée, a sample dinner invitation by The Ivory Atelier.">
+  <meta name="theme-color" content="#f7f3eb">
+  <title>La Soirée · The Ivory Atelier</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+    :root { --ink:#24251c; --paper:#f7f1e4; --gold:#e3c797; --rule:#887658; --serif:"Cormorant Garamond",Georgia,serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ink); color:var(--paper); font:16px/1.65 "DM Sans",sans-serif; }
+    a { color:inherit; }
+    :focus-visible { outline:3px solid #b38c4a; outline-offset:4px; }
+    h1,h2,h3 { margin:0; font:500 1em/1 var(--serif); }
+    h2 { font-size:clamp(3rem,6vw,5rem); margin-bottom:1.2rem; }
+    h3 { font-size:1.9rem; }
+    p { margin:0 0 1rem; }
+    .skip { position:absolute; left:1rem; top:0; transform:translateY(-110%); padding:.7rem; background:var(--paper); color:var(--ink); z-index:3; }
+    .skip:focus { transform:none; }
+    .bar,.nav,footer { padding:.8rem max(5vw,1rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.65rem 1.5rem; }
+    .bar { background:#171811; color:#e7dbbf; font-size:.76rem; }
+    .nav { border-bottom:1px solid #66583f; }
+    .nav a { text-decoration:none; }
+    .wordmark { font:italic 1.5rem var(--serif); color:var(--gold); }
+    nav { display:flex; gap:clamp(1rem,3vw,2rem); font-size:.82rem; }
+    .hero { min-height: min(690px, 80vh); position:relative; isolation:isolate; display:grid; place-items:center; text-align:center; padding:5rem 1.25rem; background:#353025; }
+    .hero img,.hero::after { position:absolute; inset:0; width:100%; height:100%; z-index:-1; }
+    .hero img { object-fit:cover; }
+    .hero::after { content:""; background:linear-gradient(90deg,#191711b0,#19171175,#191711b0),linear-gradient(0deg,#191711c4,transparent 85%); }
+    .eyebrow { color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; font-weight:600; }
+    h1 { font-size:clamp(3.6rem,9vw,8rem); letter-spacing:-.045em; margin:.7rem 0 1.25rem; }
+    h1 em { font-weight:400; color:#f0d9ae; }
+    .hero p:not(.eyebrow) { font-size:1rem; }
+    .button { display:inline-flex; justify-content:center; align-items:center; border:1px solid var(--gold); background:var(--gold); color:#211e15; padding:.85rem 1.25rem; text-decoration:none; font:600 .86rem "DM Sans",sans-serif; cursor:pointer; }
+    .button:hover { background:#f4ddba; }
+    .hero .button { margin-top:.6rem; }
+    .wrap { width:min(1120px,90%); margin:auto; padding:clamp(3.5rem,8vw,7rem) 0; }
+    .evening { background:var(--paper); color:var(--ink); }
+    .evening .wrap,.rsvp .wrap { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,8vw,7rem); }
+    .evening .eyebrow { color:#775c30; }
+    .schedule { margin:0; padding:0; list-style:none; border-top:1px solid #b7a78b; }
+    .schedule li { display:grid; grid-template-columns:5rem 1fr; gap:1rem; padding:1.2rem 0; border-bottom:1px solid #b7a78b; }
+    time { font-size:.82rem; font-weight:600; }
+    .schedule p { margin:.4rem 0 0; }
+    .details { background:#34352a; }
+    .details-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .details-grid article { padding-top:1rem; border-top:1px solid var(--rule); }
+    .details-grid p { margin:.75rem 0 0; color:#e8decc; }
+    form { padding:clamp(1.2rem,3vw,2.25rem); background:#303127; border:1px solid var(--rule); }
+    label,legend { font-size:.9rem; font-weight:600; }
+    input[type=text],textarea { display:block; width:100%; border:1px solid #a6977b; background:#24251c; color:var(--paper); font:inherit; padding:.7rem; margin:.4rem 0 1.2rem; }
+    input::placeholder { color:#c6b99e; }
+    textarea { resize:vertical; }
+    input[type=radio] { accent-color:var(--gold); }
+    fieldset { border:0; padding:0; margin:0 0 1.25rem; }
+    .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:.45rem; }
+    .result { padding:.8rem; margin:1rem 0 0; background:#403a2a; }
+    footer { border-top:1px solid var(--rule); font-size:.82rem; }
+    @media(max-width:690px) {
+      .evening .wrap,.rsvp .wrap,.details-grid { grid-template-columns:1fr; }
+      .hero { min-height:520px; }
+    }
+    :root { --ink:#382d26; --paper:#faf6ee; --gold:#825b46; --rule:#bb9f8d; }
+    body { background:#f7f3eb; color:var(--ink); }
+    .bar { background:#49362c; color:#fff9ed; }
+    .nav { border-bottom:1px solid #d8c7b8; }
+    .hero { background:#e9ded0; grid-template-columns:1fr 1fr; padding:0; min-height:0; }
+    .hero img { position:static; z-index:auto; grid-column:2; grid-row:1; min-height:520px; object-fit:cover; }
+    .hero::after { display:none; }
+    .hero > div { grid-column:1; grid-row:1; padding:4.5rem 1.2rem; }
+    h1 em { color:#825b46; }
+    .hero h1 { font-size:clamp(4rem,9vw,9rem); }
+    .button { background:#684433; color:#fff8ec; border-color:#684433; }
+    .button:hover { background:#543428; }
+    .details,.rsvp { background:#eee4d8; }
+    .details-grid p { color:#534237; }
+    form { background:#fffaf3; }
+    input[type=text],textarea { background:#fffdf8; color:var(--ink); }
+    input::placeholder { color:#766255; }
+    .result { background:#f1e6d9; }
+    @media(max-width:690px) {
+      .hero { grid-template-columns:1fr; }
+      .hero img { grid-column:1; grid-row:2; min-height:0; aspect-ratio:4/3; }
+      .hero > div { padding:3.4rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="bar"><span>Sample dinner invitation · Fictional event</span><a href="index.html#portfolio">Back to The Ivory Atelier</a></div>
+  <header class="nav">
+    <a href="#main" class="wordmark">La Soirée</a>
+    <nav aria-label="Invitation navigation"><a href="#evening">The evening</a><a href="#details">Guest details</a><a href="#rsvp">RSVP</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="invitation-title">
+      <img src="la-soiree-table.png" alt="Illustrative dinner table with cream linens and pale flowers" width="1536" height="1024" fetchpriority="high">
+      <div>
+        <p class="eyebrow">An intimate gathering</p>
+        <h1 id="invitation-title">La <em>Soirée</em></h1>
+        <p>Saturday, 21 August 2027 · 6:30 pm<br>The Linen Room, Cape Town</p>
+        <a class="button" href="#rsvp">Try the RSVP</a>
+      </div>
+    </section>
+    <section class="evening" id="evening" aria-labelledby="evening-title">
+      <div class="wrap">
+        <div><p class="eyebrow">La Soirée</p><h2 id="evening-title">Around the table</h2><p>Join us for a small dinner with friends, seasonal dishes to share and a conversation that can run as late as it likes.</p></div>
+        <ol class="schedule" aria-label="Evening schedule, South Africa Standard Time">
+          <li><time datetime="18:30">6:30 pm</time><div><h3>Welcome drinks</h3><p>A glass of something sparkling in the courtyard.</p></div></li>
+          <li><time datetime="19:15">7:15 pm</time><div><h3>Dinner</h3><p>A seasonal supper served family style.</p></div></li>
+          <li><time datetime="20:45">8:45 pm</time><div><h3>Dessert &amp; coffee</h3><p>Stay at the table for a final course and another cup.</p></div></li>
+        </ol>
+      </div>
+    </section>
+    <section class="details" id="details" aria-labelledby="details-title">
+      <div class="wrap">
+        <h2 id="details-title">Guest details</h2>
+        <div class="details-grid">
+          <article><h3>The venue</h3><p>The Linen Room is an imagined private dining room in Cape Town.</p></article>
+          <article><h3>Dress code</h3><p>Smart casual. Soft neutrals and relaxed tailoring suit the evening.</p></article>
+          <article><h3>At the table</h3><p>Vegetarian options are available. Include any dietary requests with your reply.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
+      <div class="wrap">
+        <div><h2 id="rsvp-title">Will you join us?</h2><p>Sample reply date · 7 August 2027</p><p>Try it with a made-up name. Your practice reply stays in this browser.</p></div>
+        <form id="soiree-rsvp" autocomplete="off">
+          <label for="guest">Guest name</label>
+          <input id="guest" name="guest" type="text" required maxlength="80" pattern=".*\S.*" placeholder="e.g. Sam Taylor">
+          <fieldset>
+            <legend>Will you attend?</legend>
+            <div class="choices">
+              <label><input type="radio" name="attendance" value="yes" required> I’ll be there</label>
+              <label><input type="radio" name="attendance" value="no"> I can’t make it</label>
+            </div>
+          </fieldset>
+          <div id="dietary-field" hidden>
+            <label for="diet">Dietary requests (optional)</label>
+            <textarea id="diet" name="diet" rows="2" maxlength="250" disabled></textarea>
+          </div>
+          <button class="button" type="submit" disabled>Preview my RSVP</button>
+          <p class="result" id="rsvp-result" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><span>La Soirée · A sample by The Ivory Atelier</span><a href="index.html#inquiries">Enquire about a dinner invitation</a></footer>
+  <script>
+    const form = document.querySelector('#soiree-rsvp');
+    const dietaryField = document.querySelector('#dietary-field');
+    const diet = document.querySelector('#diet');
+    const result = document.querySelector('#rsvp-result');
+
+    form.querySelector('button').disabled = false;
+    form.addEventListener('input', () => {
+      const attending = form.elements.attendance.value === 'yes';
+      dietaryField.hidden = !attending;
+      diet.disabled = !attending;
+      result.hidden = true;
+    });
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const guest = form.elements.guest.value.trim();
+      const attending = form.elements.attendance.value === 'yes';
+      const dietaryNote = diet.value.trim();
+      result.textContent = attending
+        ? `Thank you, ${guest}. Your sample reply is attending.${dietaryNote ? ' Dietary request: ' + dietaryNote + '.' : ''} No RSVP was sent.`
+        : `Thank you, ${guest}. Your sample reply is unable to attend. No RSVP was sent.`;
+      result.hidden = false;
+    });
+  </script>
+</body>
+</html>
