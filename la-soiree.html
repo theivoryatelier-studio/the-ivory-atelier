@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <meta name="description" content="La Soirée, a sample dinner invitation by The Ivory Atelier.">
-  <meta name="theme-color" content="#1829ab">
+  <meta name="theme-color" content="#f7f3eb">
   <title>La Soirée · The Ivory Atelier</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap');
-    :root { --blue:#1829ab; --red:#b52a20; --paper:#fff3d8; --ink:#171a33; --display:"Archivo Black","Arial Black",sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Sans:wght@400;500;600;700&display=swap');
+    :root { --blue:#684433; --red:#825b46; --paper:#f7f3eb; --ink:#382d26; --rule:#bb9f8d; --display:"Cormorant Garamond",Georgia,serif; }
     * { box-sizing:border-box; }
     body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 "DM Sans",Arial,sans-serif; }
     a { color:inherit; }
@@ -63,9 +63,10 @@
       .hero img { grid-column:1; grid-row:2; aspect-ratio:5/4; }
       h1 { font-size:clamp(3.5rem,12vw,6.4rem); }
     }
-    .hero { grid-template-columns:minmax(0,1fr); gap:0; padding:0 1.25rem 3.5rem; background:#f7f3eb; }
+    .hero { grid-template-columns:minmax(0,1fr); justify-items:center; text-align:center; gap:0; padding:0 1.25rem 3.5rem; background:#f7f3eb; color:var(--ink); }
     .hero > div { grid-column:1; grid-row:1; width:min(100%,700px); padding:3.4rem 1rem 2.2rem; }
-    .hero h1 { font-size:clamp(4.4rem,12vw,10rem); margin:.35rem 0 1.15rem; }
+    .hero h1 { font-size:clamp(3.7rem,10vw,8rem); font-weight:500; text-transform:none; letter-spacing:-.05em; margin:.35rem 0 1.15rem; }
+    .hero h1 em { display:inline; font-style:italic; color:var(--red); }
     .hero img { grid-column:1; grid-row:2; width:min(100%,530px); height:auto; aspect-ratio:5/4; min-height:0; border-radius:50% 50% 0 0 / 56% 56% 0 0; outline:1px solid #bb9f8d; outline-offset:6px; }
     .hero .eyebrow { margin:0; }
     .hero .button { background:transparent; color:#684433; }
@@ -77,7 +78,8 @@
     .schedule li { display:block; padding:1.6rem 1rem; }
     .schedule li + li { border-left:1px solid var(--rule); }
     .schedule h3 { margin:.5rem 0; }
-    .details { background:#f7f3eb; }
+    .details { background:#f7f3eb; color:var(--ink); }
+    .result { background:#eee4d8; }
     .details h2 { text-align:center; }
     .rsvp form { max-width:530px; margin:auto; text-align:left; border:1px solid var(--rule); outline:1px solid #d8c7b8; outline-offset:5px; }
     @media(max-width:690px) {
@@ -96,7 +98,7 @@
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="invitation-title">
-      <img src="la-soiree-supper-club.png" alt="Illustrative supper-club table with heirloom tomatoes and a cobalt tablecloth" width="1024" height="1280" fetchpriority="high">
+      <img src="la-soiree-table.png" alt="Illustrative dinner table with cream linens and pale flowers" width="1536" height="1024" fetchpriority="high">
       <div>
         <p class="eyebrow">An intimate gathering</p>
         <h1 id="invitation-title">La <em>Soirée</em></h1>
