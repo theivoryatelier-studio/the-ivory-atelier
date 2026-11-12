@@ -41,9 +41,12 @@
     .evening { background:var(--paper); color:var(--ink); }
     .evening .wrap,.rsvp .wrap { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,8vw,7rem); }
     .evening .eyebrow { color:#775c30; }
-    .schedule { margin:0; padding:0; list-style:none; border-top:1px solid #b7a78b; }
-    .schedule li { display:grid; grid-template-columns:5rem 1fr; gap:1rem; padding:1.2rem 0; border-bottom:1px solid #b7a78b; }
-    time { font-size:.82rem; font-weight:600; }
+    .programme { margin:0; padding:clamp(1.25rem,4vw,2.5rem); background:#303127; color:var(--paper); border:1px solid var(--rule); }
+    .programme figcaption { font:500 2.1rem var(--serif); padding-bottom:.85rem; }
+    .schedule { margin:0; padding:0; list-style:none; border-top:1px solid var(--rule); }
+    .schedule li { display:grid; grid-template-columns:5.1rem 1fr; gap:.8rem; padding:1rem 0; border-bottom:1px solid var(--rule); }
+    .schedule li:last-child { border-bottom:0; padding-bottom:0; }
+    time { color:var(--gold); font-size:.85rem; font-weight:600; padding-top:.25rem; }
     .schedule p { margin:.4rem 0 0; }
     .details { background:#34352a; }
     .details-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
@@ -51,12 +54,16 @@
     .details-grid p { margin:.75rem 0 0; color:#e8decc; }
     form { padding:clamp(1.2rem,3vw,2.25rem); background:#303127; border:1px solid var(--rule); }
     label,legend { font-size:.9rem; font-weight:600; }
-    input[type=text],textarea { display:block; width:100%; border:1px solid #a6977b; background:#24251c; color:var(--paper); font:inherit; padding:.7rem; margin:.4rem 0 1.2rem; }
+    input[type=text],select,textarea { display:block; width:100%; border:1px solid #a6977b; background:#24251c; color:var(--paper); font:inherit; padding:.7rem; margin:.4rem 0 1.2rem; }
     input::placeholder { color:#c6b99e; }
     textarea { resize:vertical; }
     input[type=radio] { accent-color:var(--gold); }
     fieldset { border:0; padding:0; margin:0 0 1.25rem; }
-    .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:.45rem; }
+    .choices { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr)); gap:.65rem; margin-top:.65rem; }
+    .choice { display:flex; align-items:center; gap:.55rem; min-height:3.3rem; padding:.7rem; border:1px solid #a6977b; cursor:pointer; }
+    .choice:has(input:checked) { background:var(--gold); border-color:var(--gold); color:var(--ink); }
+    .choice:has(input:focus-visible) { outline:3px solid #b38c4a; outline-offset:3px; }
+    .choice input { margin:0; flex-shrink:0; }
     .result { padding:.8rem; margin:1rem 0 0; background:#403a2a; }
     footer { border-top:1px solid var(--rule); font-size:.82rem; }
     @media(max-width:690px) {
@@ -85,11 +92,15 @@
     <section class="evening" id="evening" aria-labelledby="evening-title">
       <div class="wrap">
         <div><p class="eyebrow">A Champagne Evening</p><h2 id="evening-title">Dinner by candlelight</h2><p>Join me for a long-table dinner, a toast to a new decade and a few favourite songs to end the night.</p></div>
-        <ol class="schedule" aria-label="Evening schedule, South Africa Standard Time">
-          <li><time datetime="19:00">7:00 pm</time><div><h3>Welcome drinks</h3><p>Champagne and alcohol-free spritzes on arrival.</p></div></li>
-          <li><time datetime="19:45">7:45 pm</time><div><h3>Dinner</h3><p>Take your seat for a three-course dinner.</p></div></li>
-          <li><time datetime="21:30">9:30 pm</time><div><h3>Cake &amp; dancing</h3><p>A birthday toast, then onto the dance floor.</p></div></li>
-        </ol>
+        <figure class="programme">
+          <figcaption>The dinner programme</figcaption>
+          <ol class="schedule" aria-label="Evening schedule, South Africa Standard Time">
+            <li><time datetime="19:00">7:00 pm</time><div><h3>A welcome pour</h3><p>Champagne, alcohol-free spritzes and canapés.</p></div></li>
+            <li><time datetime="19:30">7:30 pm</time><div><h3>Take your seat</h3><p>Find your place at the long table for a three-course dinner.</p></div></li>
+            <li><time datetime="21:00">9:00 pm</time><div><h3>A toast to thirty</h3><p>Raise a glass for Sophie and share a slice of birthday cake.</p></div></li>
+            <li><time datetime="21:30">9:30 pm</time><div><h3>On the dance floor</h3><p>Stay for dancing and a late-night espresso.</p></div></li>
+          </ol>
+        </figure>
       </div>
     </section>
     <section class="details" id="details" aria-labelledby="details-title">
@@ -111,11 +122,18 @@
           <fieldset>
             <legend>Will you attend?</legend>
             <div class="choices">
-              <label><input type="radio" name="attendance" value="yes" required> I’ll be there</label>
-              <label><input type="radio" name="attendance" value="no"> I can’t make it</label>
+              <label class="choice"><input type="radio" name="attendance" value="yes" required> I’ll be there</label>
+              <label class="choice"><input type="radio" name="attendance" value="no"> I can’t make it</label>
             </div>
           </fieldset>
           <div id="dietary-field" hidden>
+            <label for="meal">Main course</label>
+            <select id="meal" name="meal" disabled>
+              <option value="">Choose a main course</option>
+              <option>Herb-roasted chicken</option>
+              <option>Wild mushroom risotto</option>
+              <option>Roasted aubergine (vegan)</option>
+            </select>
             <label for="diet">Dietary requests (optional)</label>
             <textarea id="diet" name="diet" rows="2" maxlength="250" disabled></textarea>
           </div>
@@ -129,6 +147,7 @@
   <script>
     const form = document.querySelector('#birthday-rsvp');
     const dietaryField = document.querySelector('#dietary-field');
+    const meal = document.querySelector('#meal');
     const diet = document.querySelector('#diet');
     const result = document.querySelector('#rsvp-result');
 
@@ -136,6 +155,8 @@
     form.addEventListener('input', () => {
       const attending = form.elements.attendance.value === 'yes';
       dietaryField.hidden = !attending;
+      meal.disabled = !attending;
+      meal.required = attending;
       diet.disabled = !attending;
       result.hidden = true;
     });
@@ -146,7 +167,7 @@
       const attending = form.elements.attendance.value === 'yes';
       const dietaryNote = diet.value.trim();
       result.textContent = attending
-        ? `Thank you, ${guest}. Your sample reply is attending.${dietaryNote ? ' Dietary request: ' + dietaryNote + '.' : ''} No RSVP was sent.`
+        ? `Thank you, ${guest}. Your sample reply is attending. Main course: ${meal.value}.${dietaryNote ? ' Dietary request: ' + dietaryNote + '.' : ''} No RSVP was sent.`
         : `Thank you, ${guest}. Your sample reply is unable to attend. No RSVP was sent.`;
       result.hidden = false;
     });
