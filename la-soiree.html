@@ -4,136 +4,109 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta name="description" content="La Soirée, a sample dinner invitation by The Ivory Atelier.">
-  <meta name="theme-color" content="#f7f3eb">
+  <meta name="theme-color" content="#f2ecdf">
   <title>La Soirée · The Ivory Atelier</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Sans:wght@400;500;600;700&display=swap');
-    :root { --blue:#684433; --red:#825b46; --paper:#f7f3eb; --ink:#382d26; --rule:#bb9f8d; --display:"Cormorant Garamond",Georgia,serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+    :root { --ink:#383229; --paper:#fbf7ee; --ivory:#f2ecdf; --gold:#785d36; --line:#cdbb9d; --serif:"Cormorant Garamond",Georgia,serif; }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 "DM Sans",Arial,sans-serif; }
+    html { color-scheme:light; }
+    body { margin:0; background:var(--ivory); color:var(--ink); font:16px/1.65 "DM Sans",sans-serif; }
     a { color:inherit; }
-    :focus-visible { outline:3px dashed currentColor; outline-offset:4px; }
-    p { margin:0 0 1rem; }
-    h1,h2,h3 { margin:0; line-height:1.02; }
-    h2 { font:clamp(2.4rem,5vw,5rem)/.98 var(--display); letter-spacing:-.055em; margin-bottom:1.4rem; }
-    h3 { font-size:1.35rem; font-weight:700; }
-    .skip { position:absolute; left:1rem; top:0; transform:translateY(-120%); padding:.7rem; background:var(--paper); color:var(--ink); z-index:3; }
-    .skip:focus { transform:none; }
-    .bar,.nav,footer { display:flex; align-items:center; justify-content:space-between; gap:.6rem 1.3rem; flex-wrap:wrap; padding:.7rem max(4vw,1rem); }
-    .bar { background:var(--ink); color:var(--paper); font-size:.78rem; }
-    .nav { border-bottom:2px solid var(--ink); color:var(--blue); }
-    .nav a { text-decoration:none; }
-    .nav a:hover { text-decoration:underline; }
-    .wordmark { font-family:var(--display); letter-spacing:-.06em; }
-    nav { display:flex; gap:clamp(.8rem,3vw,2rem); font-weight:700; font-size:.84rem; }
-    .hero { display:grid; grid-template-columns:1.1fr .9fr; background:var(--blue); color:var(--paper); }
-    .hero > div { grid-column:1; grid-row:1; min-width:0; padding:clamp(2.8rem,6vw,7rem) max(4vw,1.2rem); align-self:center; }
-    .hero img { grid-column:2; grid-row:1; width:100%; height:100%; min-height:0; object-fit:cover; object-position:50% 55%; aspect-ratio:4/5; }
-    .eyebrow { font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; }
-    h1 { font:clamp(3.65rem,9vw,10rem)/.86 var(--display); text-transform:uppercase; letter-spacing:-.075em; margin:.7rem 0 1.65rem; }
-    h1 em { font-style:normal; display:block; }
-    .hero p:not(.eyebrow) { font-weight:600; }
-    .button { display:inline-flex; align-items:center; justify-content:center; background:var(--paper); color:var(--blue); border:2px solid currentColor; padding:.7rem 1.15rem; font:700 .9rem "DM Sans",Arial,sans-serif; text-decoration:none; cursor:pointer; }
-    .button:hover { text-decoration:underline; }
-    .wrap { width:min(1180px,92%); margin:auto; padding:clamp(3.4rem,7vw,6rem) 0; }
-    .evening .wrap,.rsvp .wrap { display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,6vw,6rem); }
-    .evening h2,.evening .eyebrow { color:var(--blue); }
-    .schedule { margin:0; padding:0; list-style:none; border-top:2px solid currentColor; }
-    .schedule li { display:grid; grid-template-columns:5.8rem 1fr; gap:.8rem; padding:1.1rem 0; border-bottom:2px solid currentColor; }
-    time { font: .84rem var(--display); color:var(--red); }
-    .schedule p { margin:.4rem 0 0; }
-    .details { background:var(--red); color:var(--paper); }
-    .details-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
-    .details-grid article { padding-top:1rem; border-top:2px solid currentColor; }
-    .details-grid p { margin:.75rem 0 0; }
-    .rsvp { background:var(--blue); color:var(--paper); }
-    form { padding:clamp(1rem,3vw,2.2rem); background:var(--paper); color:var(--ink); border:2px solid var(--ink); }
-    label,legend { font-weight:700; font-size:.9rem; }
-    input[type=text],textarea { display:block; width:100%; padding:.65rem; font:inherit; color:var(--ink); background:#fffbec; border:2px solid var(--ink); margin:.4rem 0 1.1rem; border-radius:0; }
+    :focus-visible { outline:2px solid #866b3d; outline-offset:5px; }
+    h1,h2,h3 { margin:0; font:500 1em/1 var(--serif); }
+    h2 { font-size:clamp(2.7rem,6vw,4.5rem); }
+    h3 { font-size:1.9rem; }
+    p { margin:0; }
+    .bar,footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem 1rem; padding:.85rem max(5vw,1rem); font-size:.8rem; }
+    .bar { border-bottom:1px solid var(--line); }
+    .cover { display:grid; grid-template-columns:1.1fr .9fr; max-width:1140px; width:90%; margin:clamp(2rem,5vw,5rem) auto 0; align-items:center; }
+    .portrait { width:100%; aspect-ratio:4/5; max-height:690px; object-fit:cover; border-radius:48% 48% 0 0 / 37% 37% 0 0; }
+    .card { position:relative; z-index:1; margin-right:-2.5rem; background:var(--paper); text-align:center; padding:clamp(3rem,7vw,6rem) clamp(1.4rem,5vw,4rem); outline:1px solid var(--line); outline-offset:-.75rem; box-shadow:0 20px 45px #503c2314; }
+    .eyebrow { font-size:.72rem; color:var(--gold); letter-spacing:.18em; text-transform:uppercase; font-weight:600; }
+    h1 { font-size:clamp(4.6rem,10vw,9rem); margin:.7rem 0 1rem; letter-spacing:-.05em; }
+    h1 em { font-weight:400; color:var(--gold); }
+    .invitation { margin:0; }
+    summary { cursor:pointer; }
+    .invitation > summary { list-style:none; width:fit-content; margin:2rem auto 0; padding:.75rem 1.45rem; border:1px solid var(--gold); font-size:.9rem; font-weight:600; color:#fffaf1; background:#654f32; }
+    .invitation > summary::-webkit-details-marker { display:none; }
+    .invitation .close-copy,.invitation[open] .open-copy { display:none; }
+    .invitation[open] .close-copy { display:inline; }
+    .wrap { width:min(1080px,90%); margin:auto; }
+    .intro { padding:clamp(3.5rem,8vw,7rem) 0 2rem; max-width:620px; text-align:center; }
+    .intro p { margin:1rem 0 0; }
+    .courses { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; padding:0 0 clamp(3rem,7vw,6rem); list-style:none; }
+    .courses li { padding:1.4rem; border-block:1px solid var(--line); }
+    .courses li+li { border-left:1px solid var(--line); }
+    time { color:var(--gold); font-weight:600; font-size:.8rem; }
+    .courses h3 { margin:.5rem 0; }
+    .courses p { font-size:.92rem; }
+    .guest { display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,6vw,5rem); padding:clamp(2rem,5vw,4rem); background:#e7ddca; }
+    .guest details { border-bottom:1px solid #ae9b7a; padding:.7rem 0; }
+    .guest summary { font-weight:600; }
+    .guest details p { padding:.6rem 0 .25rem; }
+    .reply { width:min(620px,90%); margin:clamp(3rem,8vw,7rem) auto; padding:clamp(1.5rem,6vw,3.6rem); background:var(--paper); border:1px solid var(--line); box-shadow:0 18px 45px #503c2314; }
+    .reply h2 { margin:.4rem 0 .85rem; }
+    .reply p { margin-bottom:1rem; }
+    .reply label,.reply legend { font-weight:600; font-size:.88rem; }
+    input[type=text],textarea { display:block; width:100%; padding:.55rem .1rem; border:0; border-bottom:1px solid #987e55; border-radius:0; color:var(--ink); background:transparent; font:inherit; margin:.25rem 0 1rem; }
     textarea { resize:vertical; }
-    input[type=radio] { accent-color:var(--blue); }
-    fieldset { border:0; padding:0; margin:0 0 1.2rem; }
-    .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin-top:.45rem; }
-    form .button { background:var(--blue); color:var(--paper); border-color:var(--blue); }
-    .result { margin:1rem 0 0; padding:.75rem; border-left:4px solid var(--blue); background:#e8e8fb; }
-    footer { color:var(--blue); font-size:.86rem; }
-    @media(max-width:740px) {
-      .hero,.evening .wrap,.rsvp .wrap,.details-grid { grid-template-columns:1fr; }
-      .hero img { grid-column:1; grid-row:2; aspect-ratio:5/4; }
-      h1 { font-size:clamp(3.5rem,12vw,6.4rem); }
-    }
-    .hero { grid-template-columns:minmax(0,1fr); justify-items:center; text-align:center; gap:0; padding:0 1.25rem 3.5rem; background:#f7f3eb; color:var(--ink); }
-    .hero > div { grid-column:1; grid-row:1; width:min(100%,700px); padding:3.4rem 1rem 2.2rem; }
-    .hero h1 { font-size:clamp(3.7rem,10vw,8rem); font-weight:500; text-transform:none; letter-spacing:-.05em; margin:.35rem 0 1.15rem; }
-    .hero h1 em { display:inline; font-style:italic; color:var(--red); }
-    .hero img { grid-column:1; grid-row:2; width:min(100%,530px); height:auto; aspect-ratio:5/4; min-height:0; border-radius:50% 50% 0 0 / 56% 56% 0 0; outline:1px solid #bb9f8d; outline-offset:6px; }
-    .hero .eyebrow { margin:0; }
-    .hero .button { background:transparent; color:#684433; }
-    .hero .button:hover { background:#eee4d8; }
-    .evening { background:#e9ded0; }
-    .evening .wrap,.rsvp .wrap { display:block; text-align:center; }
-    .evening .wrap > div,.rsvp .wrap > div { max-width:550px; margin:0 auto 2rem; }
-    .schedule { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--rule); }
-    .schedule li { display:block; padding:1.6rem 1rem; }
-    .schedule li + li { border-left:1px solid var(--rule); }
-    .schedule h3 { margin:.5rem 0; }
-    .details { background:#f7f3eb; color:var(--ink); }
-    .result { background:#eee4d8; }
-    .details h2 { text-align:center; }
-    .rsvp form { max-width:530px; margin:auto; text-align:left; border:1px solid var(--rule); outline:1px solid #d8c7b8; outline-offset:5px; }
-    @media(max-width:690px) {
-      .hero > div { padding:2.7rem 0 2rem; }
-      .schedule { grid-template-columns:1fr; }
-      .schedule li + li { border-left:0; }
+    fieldset { border:0; margin:0 0 1rem; padding:0; }
+    .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.2rem; margin:.5rem 0; }
+    input[type=radio] { accent-color:#654f32; }
+    button { padding:.75rem 1rem; color:#fffaf1; border:1px solid #654f32; background:#654f32; font:600 .88rem "DM Sans",sans-serif; cursor:pointer; }
+    .reply .result { margin:1rem 0 0; padding:.8rem; background:#eee3d0; }
+    footer { border-top:1px solid var(--line); }
+    @media(max-width:680px) {
+      .cover { grid-template-columns:1fr; max-width:480px; }
+      .card { margin:0 .5rem -1.5rem; }
+      .portrait { max-height:410px; }
+      .guest,.courses { grid-template-columns:1fr; }
+      .courses li { border-bottom:0; padding-inline:.4rem; }
+      .courses li+li { border-left:0; }
+      .courses li:last-child { border-bottom:1px solid var(--line); }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
   <div class="bar"><span>Sample dinner invitation · Fictional event</span><a href="index.html#portfolio">Back to The Ivory Atelier</a></div>
-  <header class="nav">
-    <a href="#main" class="wordmark">La Soirée</a>
-    <nav aria-label="Invitation navigation"><a href="#evening">The evening</a><a href="#details">Guest details</a><a href="#rsvp">RSVP</a></nav>
-  </header>
-  <main id="main">
-    <section class="hero" aria-labelledby="invitation-title">
-      <img src="la-soiree-table.png" alt="Illustrative dinner table with cream linens and pale flowers" width="1536" height="1024" fetchpriority="high">
-      <div>
+  <main>
+    <header class="cover">
+      <div class="card">
         <p class="eyebrow">An intimate gathering</p>
-        <h1 id="invitation-title">La <em>Soirée</em></h1>
+        <h1>La <em>Soirée</em></h1>
         <p>Saturday, 21 August 2027 · 6:30 pm<br>The Linen Room, Cape Town</p>
-        <a class="button" href="#rsvp">Try the RSVP</a>
       </div>
-    </section>
-    <section class="evening" id="evening" aria-labelledby="evening-title">
-      <div class="wrap">
-        <div><p class="eyebrow">La Soirée</p><h2 id="evening-title">Around the table</h2><p>Join us for a small dinner with friends, seasonal dishes to share and a conversation that can run as late as it likes.</p></div>
-        <ol class="schedule" aria-label="Evening schedule, South Africa Standard Time">
-          <li><time datetime="18:30">6:30 pm</time><div><h3>Welcome drinks</h3><p>A glass of something sparkling in the courtyard.</p></div></li>
-          <li><time datetime="19:15">7:15 pm</time><div><h3>Dinner</h3><p>A seasonal supper served family style.</p></div></li>
-          <li><time datetime="20:45">8:45 pm</time><div><h3>Dessert &amp; coffee</h3><p>Stay at the table for a final course and another cup.</p></div></li>
-        </ol>
-      </div>
-    </section>
-    <section class="details" id="details" aria-labelledby="details-title">
-      <div class="wrap">
-        <h2 id="details-title">Guest details</h2>
-        <div class="details-grid">
-          <article><h3>The venue</h3><p>The Linen Room is an imagined private dining room in Cape Town.</p></article>
-          <article><h3>Dress code</h3><p>Smart casual. Soft neutrals and relaxed tailoring suit the evening.</p></article>
-          <article><h3>At the table</h3><p>Vegetarian options are available. Include any dietary requests with your reply.</p></article>
+      <img class="portrait" src="la-soiree-arch.png" alt="A calla lily in soft light beside an ivory arch" fetchpriority="high">
+    </header>
+    <details class="invitation" id="invitation">
+      <summary><span class="open-copy">Open the invitation ↓</span><span class="close-copy">Close the invitation ↑</span></summary>
+      <section class="wrap intro" aria-labelledby="evening-title">
+        <h2 id="evening-title">Around the table</h2>
+        <p>Join us for a small dinner with friends, seasonal dishes to share and a conversation that can run as late as it likes.</p>
+      </section>
+      <ol class="wrap courses" aria-label="Evening schedule, South Africa Standard Time">
+        <li><time datetime="18:30">6:30 pm</time><h3>Welcome drinks</h3><p>A glass of something sparkling in the courtyard.</p></li>
+        <li><time datetime="19:15">7:15 pm</time><h3>Dinner</h3><p>A seasonal supper served family style.</p></li>
+        <li><time datetime="20:45">8:45 pm</time><h3>Dessert &amp; coffee</h3><p>Stay at the table for a final course and another cup.</p></li>
+      </ol>
+      <section class="wrap guest" aria-labelledby="details-title">
+        <h2 id="details-title">For our guests</h2>
+        <div>
+          <details open><summary>The venue</summary><p>The Linen Room is an imagined private dining room in Cape Town.</p></details>
+          <details><summary>Dress code</summary><p>Smart casual. Soft neutrals and relaxed tailoring suit the evening.</p></details>
+          <details><summary>At the table</summary><p>Vegetarian options are available. Include any dietary requests with your reply.</p></details>
         </div>
-      </div>
-    </section>
-    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
-      <div class="wrap">
-        <div><h2 id="rsvp-title">Will you join us?</h2><p>Sample reply date · 7 August 2027</p><p>Try it with a made-up name. Your practice reply stays in this browser.</p></div>
+      </section>
+      <section class="reply" id="rsvp" aria-labelledby="rsvp-title">
+        <p class="eyebrow">Kindly reply by 7 August 2027</p>
+        <h2 id="rsvp-title">A note to our host</h2>
+        <p>Try a reply with a made-up name. Your practice reply stays in this browser.</p>
         <form id="soiree-rsvp" autocomplete="off">
           <label for="guest">Guest name</label>
           <input id="guest" name="guest" type="text" required maxlength="80" pattern=".*\S.*" placeholder="e.g. Sam Taylor">
           <fieldset>
-            <legend>Will you attend?</legend>
+            <legend>Will you join us?</legend>
             <div class="choices">
               <label><input type="radio" name="attendance" value="yes" required> I’ll be there</label>
               <label><input type="radio" name="attendance" value="no"> I can’t make it</label>
@@ -143,18 +116,26 @@
             <label for="diet">Dietary requests (optional)</label>
             <textarea id="diet" name="diet" rows="2" maxlength="250" disabled></textarea>
           </div>
-          <button class="button" type="submit" disabled>Preview my RSVP</button>
+          <label for="note">A note for the host (optional)</label>
+          <textarea id="note" name="note" rows="2" maxlength="250"></textarea>
+          <button type="submit" disabled>Preview my reply</button>
           <p class="result" id="rsvp-result" role="status" hidden></p>
         </form>
-      </div>
-    </section>
+      </section>
+    </details>
   </main>
   <footer><span>La Soirée · A sample by The Ivory Atelier</span><a href="index.html#inquiries">Enquire about a dinner invitation</a></footer>
   <script>
+    const invitation = document.querySelector('#invitation');
     const form = document.querySelector('#soiree-rsvp');
-    const dietaryField = document.querySelector('#dietary-field');
     const diet = document.querySelector('#diet');
+    const dietaryField = document.querySelector('#dietary-field');
     const result = document.querySelector('#rsvp-result');
+
+    if (location.hash === '#rsvp') {
+      invitation.open = true;
+      document.querySelector('#rsvp').scrollIntoView();
+    }
 
     form.querySelector('button').disabled = false;
     form.addEventListener('input', () => {
@@ -169,9 +150,11 @@
       const guest = form.elements.guest.value.trim();
       const attending = form.elements.attendance.value === 'yes';
       const dietaryNote = diet.value.trim();
-      result.textContent = attending
-        ? `Thank you, ${guest}. Your sample reply is attending.${dietaryNote ? ' Dietary request: ' + dietaryNote + '.' : ''} No RSVP was sent.`
-        : `Thank you, ${guest}. Your sample reply is unable to attend. No RSVP was sent.`;
+      const hostNote = form.elements.note.value.trim();
+      const reply = attending ? 'I’ll be there.' : 'I can’t make it.';
+      const details = attending && dietaryNote ? ' Dietary request: ' + dietaryNote + '.' : '';
+      const note = hostNote ? ' Note for the host: ' + hostNote : '';
+      result.textContent = `Sample reply from ${guest}: ${reply}${details}${note}`;
       result.hidden = false;
     });
   </script>
